@@ -1,0 +1,10 @@
+/.gradle/
+
+/gradle.properties
+/gradle/wrapper/gradle-wrapper.jar
+
+/build/
+
+/.idea/workspace.xml
+/.idea/shelf/
+/.idea/usage.statistics.xml

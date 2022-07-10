@@ -1,0 +1,9 @@
+name: ${name}
+main: com.entiv.plotSquaredAddon.${name}
+version: ${version}
+api-version: "1.19"
+depend:
+  - "PlotSquared"
+
+libraries:
+  - "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.7.0"
