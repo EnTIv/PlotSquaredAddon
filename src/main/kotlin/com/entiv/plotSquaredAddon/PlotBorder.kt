@@ -3,6 +3,7 @@ package com.entiv.plotSquaredAddon
 import com.entiv.core.module.Module
 import com.google.common.eventbus.Subscribe
 import com.plotsquared.core.events.PlayerEnterPlotEvent
+import com.plotsquared.core.events.PlayerLeavePlotEvent
 import com.plotsquared.core.location.Location
 import org.bukkit.Bukkit
 import org.bukkit.WorldBorder
@@ -12,7 +13,6 @@ import org.bukkit.entity.Player
 class PlotBorder(plugin: PlotSquaredAddon) : Module() {
 
     private val plotAPI = plugin.plotAPI
-    private val borders = mutableMapOf<Player, WorldBorder>()
 
     override fun load() {
         plotAPI.registerListener(this)
@@ -35,9 +35,7 @@ class PlotBorder(plugin: PlotSquaredAddon) : Module() {
             worldBorder.damageAmount = 1000.0
 
             player.worldBorder = worldBorder
-            borders[player] = worldBorder
         }
-
     }
 
     private fun toBukkitLocation(location: Location): org.bukkit.Location {
